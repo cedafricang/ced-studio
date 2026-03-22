@@ -5349,7 +5349,7 @@ function ClientPortal({token}) {
 }
 
 
-export default function CEDStudio() {
+function CEDStudio() {
   const [loaded,setLoaded]=useState(false)
   const [session,setSession]=useState(null)
   const [page,setPage]=useState("quotes")
