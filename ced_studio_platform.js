@@ -1,5 +1,5 @@
 const { useState, useEffect, useMemo, useCallback } = React
-const { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } = Recharts
+
 
 // ═══════════════════════════════════════════════════════════
 // CED AFRICA — AV DESIGN STUDIO PLATFORM v1.0
