@@ -5499,12 +5499,3 @@ function CEDStudio() {
     </AppShell>
   )
 }
-function CEDStudio() {
-  return React.createElement("div", {
-    style: {
-      padding: "40px",
-      fontSize: "20px",
-      fontWeight: "bold"
-    }
-  }, "App is working 🚀")
-}
