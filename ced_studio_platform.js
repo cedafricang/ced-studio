@@ -689,7 +689,7 @@ function AppShell({session, onLogout, children, page, setPage}) {
           <div style={{display:"flex",alignItems:"center",gap:10,marginRight:32}}>
             <div style={{background:AMBER,color:"#fff",fontSize:11,fontWeight:700,padding:"3px 8px",borderRadius:4,letterSpacing:".06em"}}>CED</div>
             <span style={{fontSize:14,fontWeight:600,color:C.text}}>Design Studio</span>
-            {store.isCloud()&&<span style={{fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:10,background:"#F0FDF4",color:"#16A34A",border:"1px solid #16A34A40",letterSpacing:".04em"}}>☁ LIVE</span>}
+            {window.SUPABASE_URL()&&<span style={{fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:10,background:"#F0FDF4",color:"#16A34A",border:"1px solid #16A34A40",letterSpacing:".04em"}}>☁ LIVE</span>}
           </div>
           {nav.map(n=>(
             <button key={n.id} onClick={()=>setPage(n.id)}
