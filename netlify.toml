@@ -1,0 +1,23 @@
+# CED Africa AV Design Studio — Netlify Configuration
+
+[build]
+  command   = "bash build.sh"
+  publish   = "_site"
+
+# Cache control — tell browsers to always recheck the JSX file
+# so designers always get the latest version after a deploy
+[[headers]]
+  for = "/ced_studio_platform.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Single-page app — all routes serve index.html
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

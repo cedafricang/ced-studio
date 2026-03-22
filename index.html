@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CED Africa — AV Design Studio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #loading {
+      position: fixed; inset: 0; background: #f8f7f5;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      font-family: -apple-system, sans-serif;
+    }
+    #loading .logo {
+      background: #D97706; color: #fff; font-weight: 700;
+      font-size: 13px; padding: 6px 14px; border-radius: 6px;
+      letter-spacing: .06em;
+    }
+    #loading .label { font-size: 14px; color: #888; }
+    #loading .spinner {
+      width: 24px; height: 24px; border: 3px solid #e5e4e0;
+      border-top-color: #D97706; border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Loading screen shown while Babel transpiles the JSX -->
+  <div id="loading">
+    <div class="logo">CED AFRICA</div>
+    <div class="spinner"></div>
+    <div class="label">Loading AV Design Studio…</div>
+  </div>
+
+  <div id="root"></div>
+
+  <!-- React 18 -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+
+  <!-- Babel standalone (transpiles JSX in the browser) -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Recharts (charts library) -->
+  <script src="https://unpkg.com/recharts@2.12.7/umd/Recharts.js"></script>
+
+  <!-- Supabase credentials — replaced at build time by build.sh -->
+  <script>
+    window.SUPABASE_URL = "https://snswbnvnscgbgvxxptds.supabase.co"
+    window.SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNuc3dibnZuc2NnYmd2eHhwdGRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxNzY2NjcsImV4cCI6MjA4OTc1MjY2N30.PUfOLfWToKIxVIkVtBLEAHKEKWAS3CdPbAMGWRldb7M"
+  </script>
+
+  <!-- The app -->
+  <script type="text/babel" src="./ced_studio_platform.js" data-presets="react"></script>
+
+  <!-- Mount -->
+  <script type="text/babel" data-presets="react">
+    document.addEventListener('DOMContentLoaded', () => {
+      const root = ReactDOM.createRoot(document.getElementById('root'))
+      root.render(React.createElement(CEDStudio))
+      document.getElementById('loading').style.display = 'none'
+    })
+  </script>
+</body>
+</html>
